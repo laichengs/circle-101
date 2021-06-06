@@ -1,12 +1,11 @@
-version: 2.1
-# Use a package of configuration called an orb.
-orbs:
-  # Declare a dependency on the welcome-orb
-  welcome: circleci/node:latest
-# Orchestrate or schedule a set of jobs
-workflows:
-  # Name the workflow "welcome"
-  welcome:
-    # Run the welcome/run job in its own container
-    jobs:
-      - echo "hello world"
+version: 2
+jobs:
+  build:
+    docker:
+    - image: circleci/node:10
+    # 必要时可以在这里指定依赖镜像
+    # - image: circleci/mysql:9.4
+
+
+    steps:
+    - run: console.log("aaa")
